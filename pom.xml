@@ -8,6 +8,7 @@
     <modules>
         <module>urwoo-security</module>
         <module>urwoo-framework</module>
+        <module>urwoo-common</module>
     </modules>
     <packaging>pom</packaging>
 
