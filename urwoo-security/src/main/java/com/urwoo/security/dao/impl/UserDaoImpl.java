@@ -57,11 +57,16 @@ public class UserDaoImpl extends SpringJdbcDao implements UserDao, TableConst{
     }
 
     public UserPo get(Integer id) {
-
-        String sql = "select u.id,u.name,u.username from "+ TABLE_USER +" where id=:id";
-        logger.info("getById()===========>sql={}, param={}", sql, id);
+        String sql = "select id,name,username from "+ TABLE_USER +" where id=:id";
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("id", id);
+        return get(sql, UserPo.class, param);
+    }
+
+    public UserPo get(String username) {
+        String sql = "select id,name,username from "+ TABLE_USER +" where username=:username";
+        Map<String, Object> param = new HashMap<String, Object>();
+        param.put("username", username);
         return get(sql, UserPo.class, param);
     }
 

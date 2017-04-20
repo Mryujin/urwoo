@@ -10,5 +10,18 @@
             http://www.springframework.org/schema/security
 		    http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <security:http>
+        <security:intercept-url pattern="/**/*.jpg" access="permitAll"/>
+        <security:intercept-url pattern="/**/*.png" access="permitAll"/>
+        <security:intercept-url pattern="/**/*.gif" access="permitAll"/>
+        <security:intercept-url pattern="/**/*.css" access="permitAll"/>
+        <security:intercept-url pattern="/**/*.js" access="permitAll"/>
 
+        <security:intercept-url pattern="/common/401.jsp" access="permitAll"/>
+        <security:intercept-url pattern="/common/403.jsp" access="permitAll"/>
+        <security:intercept-url pattern="/common/404.jsp" access="permitAll"/>
+        <security:intercept-url pattern="/common/500.jsp" access="permitAll"/>
+        <!-- cms 相关不过滤 -->
+        <security:intercept-url pattern="/cms/**" access="permitAll"/>
+    </security:http>
 </beans>

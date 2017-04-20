@@ -30,7 +30,7 @@
 
     <!-- 事务 aop 配置 -->
     <aop:config>
-        <aop:pointcut id="serviceMethods" expression="execution(* org.nyist.rsc.service..*(..))"/>
+        <aop:pointcut id="serviceMethods" expression="execution(* com.urwoo.security.service..*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
     </aop:config>
 

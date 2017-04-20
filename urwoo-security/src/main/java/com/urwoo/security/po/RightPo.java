@@ -13,4 +13,5 @@ public class RightPo implements Serializable{
     private Integer type;
     private String url;
     private String rightCode;
+    private Integer parentId;
 }
